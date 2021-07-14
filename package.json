@@ -1,0 +1,11 @@
+{
+  "name": "pschallenge",
+  "version": "1.0.0",
+  "description": "REST API get,post",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "divyankd",
+  "license": "ISC"
+}
