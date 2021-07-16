@@ -11,7 +11,7 @@ All endpoints should be used from the customer perspective (organization.id = 1)
 - [x] Get open positions for a specified organization
 - [x] Get revenue per month for a specified organization
 - [x] Get article list for a specified organization
-- [ ] Post a new order based on a provided JSON-body.
+- [x] Post a new order based on a provided JSON-body.
 
 ## Further information to the data
 
