@@ -1,0 +1,9 @@
+{
+  "name": "My Express-Node Server - development",
+  "postgres": {
+    "user": "dev01",
+    "host": "localhost",
+    "database": "node_restapi",
+    "port": 5432
+  }
+}
