@@ -10,6 +10,7 @@ app.use(express.json());
 // set http headers like CSP, XSSfilter to secure the api
 app.use(helmet());
 app.use("/", routers);
+
 debug(config.get("name"));
 
 // checks NODE_ENV environment variable - default development
