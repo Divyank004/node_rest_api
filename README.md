@@ -9,8 +9,8 @@ Create a REST-API with the given data for the following endpoints.
 All endpoints should be used from the customer perspective (organization.id = 1).
 
 - [ ] Get open positions for a specified organization
-- [ ] Get revenue per month for a specified organization
-- [ ] Get article list for a specified organization
+- [x] Get revenue per month for a specified organization
+- [x] Get article list for a specified organization
 - [ ] Post a new order based on a provided JSON-body.
 
 ## Further information to the data
