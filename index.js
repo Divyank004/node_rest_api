@@ -9,7 +9,6 @@ const app = express();
 app.use(express.json());
 // set http headers like CSP, XSSfilter to secure the api
 app.use(helmet());
-app.use("/", routers);
 
 debug(config.get("name"));
 
@@ -20,7 +19,11 @@ if (app.get("env") === "development") {
   debug("Logging enabled");
 }
 
+app.use("/", routers);
+
 const port = process.env.PORT || 3000;
 app.listen(port, () =>
   debug(`Application is up and running at http://localhost:${port}`)
 );
+
+module.exports = app;

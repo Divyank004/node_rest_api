@@ -1,3 +1,8 @@
+# How to run the API
+
+- Set the environment variables NODE_ENV (to determine the server environment), PORT, corresponding password in custom-environment-variable config file.
+- Run the server by using the command "DEBUG=app:\* nodemon index.js"
+
 # Coding Challenge
 
 Coding Challenge for new backend candidates at P.S. Cooperation GmbH
@@ -23,7 +28,6 @@ All endpoints should be used from the customer perspective (organization.id = 1)
 - ArticleLable and ArticleName should always be the attributes of the articlecustomer
 - Open Positions are positions without delivery.
 - Delivered goods have a value in the delivery field of positions.
-
 
 The endpoints are referenced in the swagger.json. You can read it using https://editor.swagger.io or set up your own instance locally.
 

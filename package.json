@@ -4,7 +4,7 @@
   "description": "REST API get,post",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "divyankd",
   "license": "ISC",
@@ -15,7 +15,10 @@
     "helmet": "^4.6.0",
     "joi": "^17.4.1",
     "morgan": "^1.10.0",
-    "pg": "^8.6.0",
     "pg-promise": "^10.10.2"
+  },
+  "devDependencies": {
+    "jest": "^27.0.6",
+    "supertest": "^6.1.3"
   }
 }

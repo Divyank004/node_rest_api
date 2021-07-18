@@ -35,9 +35,36 @@ const createOrder = (request, response) => {
   if (schemaresult.error)
     return response.status(400).send(schemaresult.error.details[0].message);
 
-  // Todo validating inputs articleId, supplierId, quantity for potential sql injections
+  // validating inputs articleId, supplierId, quantity for potential sql injections
   request.body.forEach(async (element) => {
     const { articleId, supplierId, quantity } = element;
+    const inputschema = Joi.object({
+      inputvalue: Joi.number().integer().min(1).max(10000),
+    });
+
+    const articleIdschemaresult = inputschema.validate({
+      inputvalue: articleId,
+    });
+    if (articleIdschemaresult.error)
+      return response
+        .status(400)
+        .send(articleIdschemaresult.error.details[0].message);
+
+    const supplierIdschemaresult = inputschema.validate({
+      inputvalue: supplierId,
+    });
+    if (supplierIdschemaresult.error)
+      return response
+        .status(400)
+        .send(supplierIdschemaresult.error.details[0].message);
+
+    const quantityschemaresult = inputschema.validate({
+      inputvalue: quantity,
+    });
+    if (quantityschemaresult.error)
+      return response
+        .status(400)
+        .send(quantityschemaresult.error.details[0].message);
 
     try {
       // fetch supplycontract id
@@ -76,9 +103,7 @@ const createOrder = (request, response) => {
       return response.status(201).send("Created a new order Successfully!!");
     } catch (error) {
       debug(`Server error in inserting a new position ${error}`);
-      return response
-        .status(500)
-        .send(`Server error in inserting a new position ${error}`);
+      return response.status(500).send(`Server error: Invalid input data`);
     }
   });
 };

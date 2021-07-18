@@ -4,10 +4,12 @@ const { debug, db } = require("./setup");
 const getArticles = async (request, response) => {
   const organizationId = request.params.organizationId;
   //input validation - organizationId
-  const schema = Joi.object({
+  const organizationIdschema = Joi.object({
     organizationId: Joi.number().integer().min(1).max(10000),
   });
-  const schemaresult = schema.validate({ organizationId: organizationId });
+  const schemaresult = organizationIdschema.validate({
+    organizationId: organizationId,
+  });
   if (schemaresult.error)
     return response.status(400).send(schemaresult.error.details[0].message);
   try {
